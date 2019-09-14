@@ -66,5 +66,5 @@ gulp.task('watch', function() {
   gulp.watch(['*html', '_includes/*html', '_layouts/*.html'], gulp.series(['jekyll-rebuild']))
 });
 
-gulp.task('watch', gulp.series(['js', 'sass', 'fonts', 'imagemin', 'browser-sync', 'watch']))
+gulp.task('dev', gulp.series(['js', 'sass', 'fonts', 'imagemin', 'browser-sync', 'watch']))
 gulp.task('build', gulp.series(['js', 'sass', 'fonts', 'imagemin', 'jekyll-rebuild']))
