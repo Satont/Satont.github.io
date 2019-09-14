@@ -1,0 +1,15 @@
+title: Satont.ru
+description: I'm WorldWide
+
+username: Satont WorldWide
+user_description: Love code.
+user_title: Node.js developer
+email: me@satont.ru
+twitter_username: lorem_ipsum
+github_username:  Satont
+gplus_username:  lorem_ipsum
+
+google-analytics:
+  id: ""
+
+exclude: ['package.json', 'src' , 'node_modules']
