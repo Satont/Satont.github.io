@@ -1,24 +1,24 @@
-var gulp = require('gulp');
-var csso = require('gulp-csso');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
-var plumber = require('gulp-plumber');
-var cp = require('child_process');
-var imagemin = require('gulp-imagemin');
-var browserSync = require('browser-sync');
+const gulp = require('gulp')
+const csso = require('gulp-csso')
+const uglify = require('gulp-uglify')
+const concat = require('gulp-concat')
+const sass = require('gulp-sass')
+const plumber = require('gulp-plumber')
+const cp = require('child_process')
+const imagemin = require('gulp-imagemin')
+const browserSync = require('browser-sync')
 
-var jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll';
+var jekyllCommand = (/^win/.test(process.platform)) ? 'jekyll.bat' : 'jekyll'
 
 gulp.task('jekyll-build', function (done) {
 	return cp.spawn(jekyllCommand, ['build'], {stdio: 'inherit'})
-		.on('close', done);
+		.on('close', done)
 });
 
 gulp.task('jekyll-rebuild', gulp.series(['jekyll-build'], function (done) {
-	browserSync.reload();
-	done();
-}));
+	browserSync.reload()
+	done()
+}))
 
 gulp.task('browser-sync', gulp.series(['jekyll-build'], function(done) {
 	browserSync({
@@ -59,12 +59,12 @@ gulp.task('js', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/styles/**/*.scss', gulp.series(['sass', 'jekyll-rebuild']));
-  gulp.watch('src/js/**/*.js', gulp.series(['js', 'jekyll-rebuild']));
-  gulp.watch('src/fonts/**/*.{tff,woff,woff2}', gulp.series(['fonts']));
-  gulp.watch('src/img/**/*.{jpg,png,gif}', gulp.series(['imagemin']));
-  gulp.watch(['*html', '_includes/*html', '_layouts/*.html'], gulp.series(['jekyll-rebuild']));
+  gulp.watch('src/styles/**/*.scss', gulp.series(['sass', 'jekyll-rebuild']))
+  gulp.watch('src/js/**/*.js', gulp.series(['js', 'jekyll-rebuild']))
+  gulp.watch('src/fonts/**/*.{tff,woff,woff2}', gulp.series(['fonts']))
+  gulp.watch('src/img/**/*.{jpg,png,gif}', gulp.series(['imagemin']))
+  gulp.watch(['*html', '_includes/*html', '_layouts/*.html'], gulp.series(['jekyll-rebuild']))
 });
 
-gulp.task('watch', gulp.series(['js', 'sass', 'fonts', 'imagemin', 'browser-sync', 'watch']));
-gulp.task('build', gulp.series(['js', 'sass', 'fonts', 'imagemin']));
+gulp.task('watch', gulp.series(['js', 'sass', 'fonts', 'imagemin', 'browser-sync', 'watch']))
+gulp.task('build', gulp.series(['js', 'sass', 'fonts', 'imagemin', 'jekyll-rebuild']))
