@@ -1,13 +1,13 @@
 {
-  "name": "particle",
-  "version": "1.0.0",
+  "name": "satontprofile",
+  "version": "2.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build"
   },
-  "author": "Nathan Randecker",
+  "author": "Satont WorldWide",
   "license": "ISC",
   "dependencies": {
     "browser-sync": "^2.26.3",
