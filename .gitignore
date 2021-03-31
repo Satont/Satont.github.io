@@ -1,7 +1,0 @@
-.sass-cache
-node_modules
-.DS_STORE
-package-lock.json
-yarn.lock
-.jekyll-cache
-_site
