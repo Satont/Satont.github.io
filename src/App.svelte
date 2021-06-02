@@ -18,7 +18,7 @@
       icon: faGithub,
     },
     {
-      href: "https://discords.com/bio/p/266632783336570880",
+      href: "https://dsc.bio/satont",
       icon: faDiscord,
     }
   ]
