@@ -1,27 +1,9 @@
 <script lang="ts">
   import Fa from 'svelte-fa'
   import logo from './assets/avatar.jpg'
-  import { faTwitch, faTelegram, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons'
+  import { links } from './stores/links'
 
   const iconSize = "3x"
-  const links = [
-    {
-      href: "https://twitch.tv/s4tont",
-      icon: faTwitch,
-    },
-    {
-      href: "https://t.me/satont",
-      icon: faTelegram,
-    },
-    {
-      href: "https://github.com/satont",
-      icon: faGithub,
-    },
-    {
-      href: "https://dsc.bio/satont",
-      icon: faDiscord,
-    }
-  ]
 </script>
 
 <main>
